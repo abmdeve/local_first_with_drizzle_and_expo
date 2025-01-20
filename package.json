@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "drizzle-orm": "^0.38.4",
-    "expo": "~52.0.25",
+    "expo": "~52.0.26",
     "expo-drizzle-studio-plugin": "^0.1.1",
     "expo-sqlite": "^15.0.6",
     "expo-status-bar": "~2.0.1",
