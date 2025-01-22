@@ -1,6 +1,7 @@
 import {
   Button,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -48,24 +49,26 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ padding: 8 }}>
-        <Text
-          style={{
-            fontSize: 32,
-            opacity: 0.5,
-            fontWeight: "700",
-            marginBottom: 12,
-          }}
-        >
-          Habits
-        </Text>
-        <View style={{ gap: 8 }}>
-          {data.map((habit) => {
-            return <HabitComponent key={String(habit.id)} habit={habit} />;
-          })}
-        </View>
+      <ScrollView>
         <AddHabit />
-      </View>
+        <View style={{ padding: 8 }}>
+          <Text
+            style={{
+              fontSize: 32,
+              opacity: 0.5,
+              fontWeight: "700",
+              marginBottom: 12,
+            }}
+          >
+            Habits
+          </Text>
+          <View style={{ gap: 8 }}>
+            {data.map((habit) => {
+              return <HabitComponent key={String(habit.id)} habit={habit} />;
+            })}
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

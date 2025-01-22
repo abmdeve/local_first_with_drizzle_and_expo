@@ -18,10 +18,8 @@ export const habits = t.sqliteTable("habits", {
 export const habitLogs = t.sqliteTable("habitLogs", {
   id: t.integer({ mode: "number" }).primaryKey({ autoIncrement: true }),
   //   DD/MM/YYYY
-  date: t.text().notNull(),
-  // .integer({ mode: "timestamp" })
-  // .notNull()
-  // .default(sql`(CURRENT_DATE)`)
+  // date: t.text().notNull(), CODE MARCHE
+  date: t.integer({ mode: "timestamp_ms" }).notNull(),
   completed: t.integer({ mode: "boolean" }).default(true),
   habit_id: t.integer().references(() => habits.id, { onDelete: "cascade" }),
   created_at: t.text().default(sql`(CURRENT_TIMESTAMP)`),
